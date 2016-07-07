@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faviconer</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="./libs/pure-min/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="./blocks/menu/menu.css">
+	<link rel="stylesheet" type="text/css" href="./blocks/app/app.css">
+</head>
+<body>
+
+<div class="app">
+	<div class="js-menu"></div>
+	<div class="js-form"></div>
+</div>
+
+
+<script type="text/x-tmpl" id="menu">
+	<div class="menu pure-menu custom-restricted-width">
+		<span class="menu__title pure-menu-heading">
+			<%this.title%>
+		</span>
+		<ul class="menu__list pure-menu-list">
+		</ul>
+	</div>
+</script>
+
+<script type="text/x-tmpl" id="item">
+	<a class="pure-menu-link" href="<%this.url%>" data-action="pick">
+		<%this.anchor%>
+	</a>
+	<i class="close" data-action="remove"></i>	
+</script>
+
+<script type="text/x-tmpl" id="form">
+	<label> Anchor: </label>
+	<input type='text' class='js-anchor'>
+	<label> URL: </label>
+	<input type='text' class='js-url'>
+	<button type='submit'class='js-submit'>Add</button>
+</script>
+
+<!-- Dependencies -->
+<script type="text/javascript" src='./libs/tmpl.js'></script>
+<script type="text/javascript" src='./blocks/form/index.js'></script>
+<script type="text/javascript" src='./blocks/item/index.js'></script>
+<script type="text/javascript" src='./blocks/menu/index.js'></script>
+
+<!-- Application -->
+<script type="text/javascript" src="./blocks/app/index.js"></script>
+
+</body>
+</html>
