@@ -3,15 +3,18 @@
 
 	class Item{
 		constructor(opts){
-			this.url = opts.href;
-			this.anchor = opts.anchor;
+			this.data = opts.data;
 			this.el = document.createElement('li');
 			this.el.className = 'pure-menu-item';
-			this.render();
+			this.render(); //this.render(opts.data)?
 			this.bindEvents();
 		}
 
-		render() {
+		render(data) {
+			if (data){
+				this.data = data;
+			}
+
 			let _template = document.querySelector('#item').innerHTML;
 			this.el.innerHTML = TemplateEngine(_template, {url: this.url, anchor: this.anchor});
 

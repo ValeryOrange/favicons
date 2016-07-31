@@ -14,6 +14,8 @@
 		constructor(opts) {
 			this.el = opts.el;
 			this.data = opts.data;
+
+			// все, что ниже, вытащить из конструктора
 			
 			this.render();
 
@@ -27,7 +29,7 @@
 		/**
 		 * Теперь умнее!
 		 */
-		render () {
+		render() {
 			let _template = document.querySelector('#menu').innerHTML;
 			this.el.innerHTML = TemplateEngine(_template, this.data);
 		}

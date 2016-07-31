@@ -2,30 +2,14 @@
 	'use strict';
 
 	let Menu = window.Menu;
+	let Model = window.Model;
+
+	let model = new Model({
+		url: '/data/menu.json',
+	});
 
 	let menu = new Menu({
 		el: document.querySelector('.js-menu'),
-		data: {
-			title: 'SINGLE PAGE APPLICATION',
-			items: [
-				{
-					href: 'https://vk.com',
-					anchor: 'vk.com'
-				},
-				{
-					href: 'https://ok.ru',
-					anchor: 'ok.ru'
-				},
-				{
-					href: 'https://yahoo.com',
-					anchor: 'yahoo.com'
-				},
-				{
-					href: 'https://yandex.ru',
-					anchor: 'yandex.ru'
-				}
-			]
-		}
 	});
 
 	let form = new Form({
@@ -45,6 +29,8 @@
 	menu.el.addEventListener('pick', function (event) {
 		console.log('picked ' + event.target);
 	});
+
+	model.fetch(menu.render.bind(menu));
 
 	window.menu = menu;
 

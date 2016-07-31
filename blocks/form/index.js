@@ -30,11 +30,11 @@
 				let url = this.el.querySelector('.js-url');
 
 				if (anchor.value != '' && url.value != ''){
-					console.log(anchor.value)
+					// console.log(anchor.value);
 					this.trigger('add:item', {
 						anchor: anchor.value,
 						url: url.value
-					})
+					});
 				}
 			}.bind(this));
 		}
