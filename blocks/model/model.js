@@ -7,11 +7,11 @@
 			this.url = opts.url;
 		}
 
-		get getData(){
+		getData(){
 			return this.data;
 		}
 
-		set setData(data){
+		setData(data){
 			this.data = data;
 		}
 
@@ -19,14 +19,14 @@
 			let req = this._makeRequest('GET');
 
 			req.onreadystatechange = () => {
-				if (req.readystate != 4) return;
+				if (req.readyState !== 4) return;
 
 				if (req.status === 200){
 					let dataString = req.responseText;
 					this.setData(JSON.parse(dataString));
 					resolve(this.getData());
 				}
-			}
+			};
 
 			req.send();
 		}

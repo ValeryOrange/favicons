@@ -13,10 +13,10 @@
 		 */
 		constructor(opts) {
 			this.el = opts.el;
-			this.data = opts.data;
+			this.data = opts.data || {items: [], title: ''};
 
 			// все, что ниже, вытащить из конструктора
-			
+
 			this.render();
 
 			this.list = this.el.querySelector('.menu__list');
@@ -29,7 +29,11 @@
 		/**
 		 * Теперь умнее!
 		 */
-		render() {
+		render(data) {
+			if (data) {
+				this.data = data;
+			}
+
 			let _template = document.querySelector('#menu').innerHTML;
 			this.el.innerHTML = TemplateEngine(_template, this.data);
 		}

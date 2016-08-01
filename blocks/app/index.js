@@ -3,6 +3,7 @@
 
 	let Menu = window.Menu;
 	let Model = window.Model;
+	let Form = window.Form;
 
 	let model = new Model({
 		url: '/data/menu.json',
